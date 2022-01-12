@@ -1,0 +1,279 @@
+body
+{
+    animation: 10.0s movement linear infinite;
+    background-color: #fdafb6;
+    background-image: 
+    radial-gradient(closest-side, rgba(235, 105, 78, 1), rgba(235, 105, 78, 0)),
+    radial-gradient(closest-side, rgb(255, 116, 116), rgba(243, 100, 100, 0)),
+    radial-gradient(closest-side, rgba(254, 234, 131, 1), rgba(254, 234, 131, 0)),
+    radial-gradient(closest-side, rgba(170, 142, 245, 1), rgba(170, 142, 245, 0)),
+    radial-gradient(closest-side, rgb(250, 171, 107), rgba(248, 192, 147, 0));
+    background-size: 130vmax 130vmax, 80vmax 80vmax, 90vmax 90vmax, 110vmax 110vmax, 90vmax 90vmax;
+    background-position: -80vmax -80vmax, 60vmax -30vmax, 10vmax 10vmax, -30vmax -10vmax, 50vmax 50vmax;
+    background-repeat: no-repeat;
+    margin: 0px;
+    min-height: 100vh;
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+#topbar
+{
+    background-color: rgba(245, 245, 245);
+    /* background-clip: text; */
+    box-shadow: gray 0px 0px 4px;
+    height: 10vh;
+    width: 100vw;
+    z-index: 10;
+}
+
+#logo
+{
+    /* color: transparent; */
+    color: rgb(60, 60, 60);
+    display: inline-flex;
+    font-size: 5vh;
+    font-family: Sofia;
+    line-height: 10vh;
+    height: fit-content;
+    padding-left: 4vh;
+    padding-right: 4vh;
+    width: fit-content;
+}
+
+#topbar button
+{
+    background-color: transparent;
+    border-radius: 5px;
+    border: none;
+    color: rgb(60, 60, 60);
+    display: inline-flex;
+    font-size: 2vh;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    line-height: 3vh;
+    left: 160px;
+    height: 4vh;
+    padding: 1vh;
+    padding-top: 0.5vh;
+    padding-bottom: 0.5vh;
+    position: absolute;
+    top: 3vh;
+    width: fit-content;
+}
+
+#topbar button:hover
+{
+    background-color: rgb(220, 220, 220);
+}
+
+#search
+{
+    left: 270px !important;
+}
+
+#css
+{
+    left: 350px !important;
+}
+
+#js
+{
+    left: 415px !important;
+}
+
+#queastio
+{
+    left: 520px !important;
+    /* right: 20px !important; */
+}
+
+#link
+{
+    color: rgb(60, 60, 60);
+    font-size: 15px;
+    line-height: 2vh;
+    position: absolute;
+    text-decoration: none;
+    right: 20px;
+    top: 4vh;
+}
+
+#sidebar
+{
+    background-color: rgba(255, 255, 255, 0.678);
+    height: 90vh;
+    overflow: scroll;
+    position: absolute;
+    top: 10vh;
+    width: 25vw;
+    z-index: 5;
+}
+
+#sidebar::-webkit-scrollbar
+{
+    display: none;
+}
+
+#sidebar h4
+{
+    /* background-color: rgba(250, 250, 250, 0.95); */
+    background-color: transparent;
+    border-radius: 8px;
+    color: rgba(76, 0, 130, 0.5);
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 30px;
+    height: 30px;
+    margin: 10px;
+    padding-left: 10px;
+    width: calc(25vw - 30px);
+}
+
+#sidebar svg
+{
+    overflow: visible !important;
+    transform: rotate(0deg);
+    transition: transform 0.2s;
+}
+
+#sidebar section
+{
+    list-style: none;
+    height: 0;
+    margin: 0;
+    overflow: hidden;
+    padding-left: 10px;
+    transition: all 0.2s;
+    width: calc(25vw - 10px);
+}
+
+#sidebar button
+{
+    background-color: rgba(245, 245, 245, 0.95);
+    border: none;
+    border-radius: 7px;
+    /* height: 4vw; */
+    margin-right: 0.5vw;
+    margin-bottom: 0.5vw;
+    width: 4vw;
+}
+
+#sidebar button:hover
+{
+    background-color: rgba(215, 215, 215, 0.678);
+}
+
+#mainContent
+{
+    background-color: white;
+    border-left: 0.5px solid rgb(232, 232, 232);
+    border-top: 0.5px solid rgb(232, 232, 232);
+    left: 25vw;
+    height: 90vh;
+    position: absolute;
+    top: 10vh;
+    width: 75vw;
+    z-index: 5;
+}
+
+#mainContent p
+{
+    padding: 20px;
+}
+
+#mainContent h3
+{
+    color: gray;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 3vh !important;
+    padding: 15px;
+}
+
+#wordbox
+{
+    border: 1px dashed rgb(211, 211, 211);
+    border-radius: 7px;
+    /* display: inline-box; */
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    height: 30vh;
+    outline-color: rgba(76, 0, 130, 0.5);
+    padding: 10px;
+    margin: 20px;
+    width: 37vw;
+}
+
+.functionButton
+{
+    background-color: rgba(232, 232, 232, 0.678);
+    border: none;
+    border-radius: 7px;
+    height: 30px;
+    margin-left: 20px;
+    width: 80px;
+}
+
+.functionButton:hover
+{
+    background-color: rgba(215, 215, 215, 0.678);
+}
+
+#outputBox
+{
+    background-color: rgba(242, 242, 242, 0.3);
+    border-radius: 7px;
+    color: rgb(60, 60, 60);
+    float: right;
+    height: 30vh;
+    margin: 20px;
+    margin-left: 0px;
+    padding: 10px;
+    position: relative;
+    width: calc(38vw - 105px);
+}
+
+#guide
+{
+    background-color: rgba(242, 242, 242, 0.3);
+    border-radius: 7px;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: calc(75vw - 40px);
+}
+
+#sign
+{
+    bottom: 15px;
+    color: rgb(180, 180, 180);
+    font-size: 10px;
+    position: fixed;
+    right: 15px;
+}
+
+@keyframes movement 
+{
+    0%, 100%
+    {
+        background-size: 130vmax 130vmax, 80vmax 80vmax, 90vmax 90vmax, 110vmax 110vmax, 90vmax 90vmax;
+        background-position: -80vmax -80vmax, 60vmax -30vmax, 10vmax 10vmax, -30vmax -10vmax, 50vmax 50vmax;
+    }
+    25%
+    {
+        background-size: 100vmax 100vmax, 90vmax 90vmax, 100vmax 100vmax, 90vmax 90vmax, 60vmax 60vmax;
+        background-position: -60vmax -90vmax, 50vmax -40vmax, 0vmax -20vmax, -40vmax -20vmax, 40vmax 60vmax;
+    }
+    50%
+    {
+        background-size: 80vmax 80vmax, 110vmax 110vmax, 80vmax 80vmax, 60vmax 60vmax, 80vmax 80vmax;
+        background-position: -50vmax -70vmax, 40vmax -30vmax, 10vmax 0vmax, 20vmax 10vmax, 30vmax 70vmax;
+    }
+    75%
+    {
+        background-size: 90vmax 90vmax, 90vmax 90vmax, 100vmax 100vmax, 90vmax 90vmax, 70vmax 70vmax;
+        background-position: -50vmax -40vmax, 50vmax -30vmax, 20vmax 0vmax, -10vmax 10vmax, 40vmax 60vmax;
+    }
+}
