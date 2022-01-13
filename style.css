@@ -22,7 +22,6 @@ body
 #topbar
 {
     background-color: rgba(245, 245, 245);
-    /* background-clip: text; */
     box-shadow: gray 0px 0px 4px;
     height: 10vh;
     width: 100vw;
@@ -34,14 +33,22 @@ body
     /* color: transparent; */
     color: rgb(60, 60, 60);
     display: inline-flex;
-    font-size: 5vh;
+    font-size: 4vh;
     font-family: Sofia;
+    float: left;
     line-height: 10vh;
     height: fit-content;
+    margin: 0;
     padding-left: 4vh;
     padding-right: 4vh;
+    position: relative;
     width: fit-content;
 }
+
+/* #logo:hover
+{
+    animation: RGB 10s infinite;
+} */
 
 #topbar button
 {
@@ -50,16 +57,18 @@ body
     border: none;
     color: rgb(60, 60, 60);
     display: inline-flex;
-    font-size: 2vh;
+    font-size: 15px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
+    float: left;
     line-height: 3vh;
-    left: 160px;
     height: 4vh;
+    margin-right: 20px;
+    overflow: hidden;
     padding: 1vh;
     padding-top: 0.5vh;
     padding-bottom: 0.5vh;
-    position: absolute;
+    position: relative;
     top: 3vh;
     width: fit-content;
 }
@@ -69,25 +78,11 @@ body
     background-color: rgb(220, 220, 220);
 }
 
-#search
+#apple
 {
-    left: 270px !important;
-}
-
-#css
-{
-    left: 350px !important;
-}
-
-#js
-{
-    left: 415px !important;
-}
-
-#queastio
-{
-    left: 520px !important;
-    /* right: 20px !important; */
+    position: relative;
+    top: 0.1em;
+    /* 0.15vh */
 }
 
 #link
@@ -101,9 +96,15 @@ body
     top: 4vh;
 }
 
+#link:hover
+{
+    color: rgb(99, 99, 99);
+}
+
 #sidebar
 {
-    background-color: rgba(255, 255, 255, 0.678);
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
     height: 90vh;
     overflow: scroll;
     position: absolute;
@@ -155,10 +156,15 @@ body
     background-color: rgba(245, 245, 245, 0.95);
     border: none;
     border-radius: 7px;
-    /* height: 4vw; */
+    height: 4vw;
     margin-right: 0.5vw;
     margin-bottom: 0.5vw;
     width: 4vw;
+}
+
+.big
+{
+    height: fit-content !important;
 }
 
 #sidebar button:hover
@@ -184,20 +190,40 @@ body
     padding: 20px;
 }
 
+#mainContent h2
+{
+    color: gray;
+    font-weight: normal;
+    line-height: 3vh !important;
+    padding: 14px;
+}
+
 #mainContent h3
 {
     color: gray;
     font-weight: normal;
     font-size: 16px;
     line-height: 3vh !important;
-    padding: 15px;
+    padding: 8px;
+    padding-left: 14px;
+}
+
+i
+{
+    color: rgba(76, 0, 130, 0.5);
+}
+
+svg
+{
+    display: inline-block;
+    vertical-align: -0.075em;
 }
 
 #wordbox
 {
+    background-color: rgba(242, 242, 242, 0.3);
     border: 1px dashed rgb(211, 211, 211);
     border-radius: 7px;
-    /* display: inline-box; */
     font-family: Arial, Helvetica, sans-serif;
     font-size: 18px;
     height: 30vh;
@@ -212,6 +238,7 @@ body
     background-color: rgba(232, 232, 232, 0.678);
     border: none;
     border-radius: 7px;
+    font-size: 12px;
     height: 30px;
     margin-left: 20px;
     width: 80px;
@@ -222,24 +249,53 @@ body
     background-color: rgba(215, 215, 215, 0.678);
 }
 
+#L_block
+{
+    background-color: rgba(235, 105, 78, 0.4);
+    color: white;
+}
+
+#L_inline
+{
+    background-color: rgba(235, 105, 78, 0.4);
+    color: white;
+}
+
+#rendersetting
+{
+    background-color: rgba(76, 0, 130, 0.5);
+    color: whitesmoke;
+    width: 110px;
+}
+
 #outputBox
 {
     background-color: rgba(242, 242, 242, 0.3);
     border-radius: 7px;
+    border-bottom: 1px solid rgb(230, 230, 230);
+    border-right: 1px solid rgb(230, 230, 230);
     color: rgb(60, 60, 60);
     float: right;
     height: 30vh;
     margin: 20px;
     margin-left: 0px;
+    overflow: scroll;
     padding: 10px;
     position: relative;
     width: calc(38vw - 105px);
+}
+
+#outputBox::-webkit-scrollbar
+{
+    display: none;
 }
 
 #guide
 {
     background-color: rgba(242, 242, 242, 0.3);
     border-radius: 7px;
+    border-bottom: 1px solid rgb(230, 230, 230);
+    border-right: 1px solid rgb(230, 230, 230);
     margin-left: 20px;
     margin-right: 20px;
     width: calc(75vw - 40px);
@@ -275,5 +331,37 @@ body
     {
         background-size: 90vmax 90vmax, 90vmax 90vmax, 100vmax 100vmax, 90vmax 90vmax, 70vmax 70vmax;
         background-position: -50vmax -40vmax, 50vmax -30vmax, 20vmax 0vmax, -10vmax 10vmax, 40vmax 60vmax;
+    }
+}
+
+@keyframes RGB
+{
+    0%, 100%
+    {
+        color: #ff0000;
+    }
+    14.3%
+    {
+        color: #ff7f00;
+    }
+    28.6%
+    {
+        color: #ffff00;
+    }
+    42.9%
+    {
+        color: #00ff00;
+    }
+    57.1%
+    {
+        color: #00ffff;
+    }
+    71.3%
+    {
+        color: #0000ff;
+    }
+    85.6%
+    {
+        color: #8b00ff;
     }
 }

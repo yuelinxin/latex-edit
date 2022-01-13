@@ -1,3 +1,16 @@
+MathJax = {
+    tex: {
+      inlineMath: [['$', '$']], //行内公式
+      displayMath: [['$$','$$']] //段内公式
+    },
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+};
 
 var click_count1 = 0;
 function show_1(obj)
@@ -64,6 +77,27 @@ function add(obj)
        tc.value = tc.value.substr(0,tc.selectionStart)+str+tc.value.substring(tc.selectionStart,tclen);  
     }
     setCaretPosition(tc, pos+strlen);
+    render();
+}
+
+function add_double(obj)
+{  
+    var tc = document.getElementById("wordbox");
+    var tclen = tc.value.length;
+    var pos = getPosition(tc);
+    var str = obj.name;
+    var strlen = str.length;
+    tc.focus();
+    if(typeof document.selection != "undefined")  
+    {  
+        document.selection.createRange().text = str;    
+    }  
+    else  
+    {  
+       tc.value = tc.value.substr(0,tc.selectionStart)+str+tc.value.substring(tc.selectionStart,tclen);  
+    }
+    setCaretPosition(tc, pos+(strlen / 2));
+    render();
 }
 
 function copy()
@@ -88,16 +122,32 @@ window.onload = function()
 {
     var text = document.querySelector("#wordbox");
     var out = document.querySelector("#outputBox");
-    var div = document.querySelector("#outputBox")
-    text.addEventListener("keyup", function(e) {
-        div.innerHTML = text.value;
-    });
     $("#clear").click(function(){
         text.value = "";
         out.innerHTML = "";
+        setCaretPosition(text, 0);
         $("#copy").html("Copy");
     });
     $("#wordbox").focus();
+}
+
+function render()
+{
+    if (AutoRender == true)
+    {
+        var out = document.querySelector("#outputBox");
+        out.innerHTML = document.querySelector("#wordbox").value;
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub,out]);
+    }
+    else
+    {
+        if (event.keyCode == 91 || event.keyCode == 93 || event.keyCode == 17 || event.keyCode == 224)
+        {
+            var out = document.querySelector("#outputBox");
+            out.innerHTML = document.querySelector("#wordbox").value;
+            MathJax.Hub.Queue(["Typeset",MathJax.Hub,out]);
+        }
+    }
 }
 
 const getPosition = function (element) {
@@ -130,12 +180,21 @@ function setCaretPosition(textDom, pos) {
     }
 }
 
-MathJax = {
-    tex: {
-      inlineMath: [['$', '$']], //行内公式
-      displayMath: [['$$','$$']] //段内公式
-    },
-    svg: {
-      fontCache: 'global'
+var AutoRender = true;
+function change_render_mode(obj)
+{
+    if (AutoRender == true)
+    {
+        AutoRender = false;
+        obj.innerHTML = "ManualRender";
+        obj.style.backgroundColor = "rgba(232, 232, 232, 0.678)";
+        obj.style.color = "black";
     }
-};
+    else
+    {
+        AutoRender = true;
+        obj.innerHTML = "AutoRender";
+        obj.style.backgroundColor = "rgba(76, 0, 130, 0.5)";
+        obj.style.color = "whitesmoke";
+    }
+}
