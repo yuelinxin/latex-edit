@@ -92,11 +92,6 @@ function copy()
     }
 }
 
-function focus_()
-{
-    $("#wordbox").focus();
-}
-
 window.onload = function()
 {
     var text = document.querySelector("#wordbox");
