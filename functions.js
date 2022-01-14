@@ -12,6 +12,23 @@ MathJax = {
     }
 };
 
+var click_count1 = 0;
+var click_count2 = 0;
+var click_count3 = 0;
+var click_count4 = 0;
+
+function show(obj)
+{
+    identifier = obj.getAttribute("data-id");
+    switch (identifier)
+    {
+        case "a": click_count1++;show_more(click_count1, obj);break;
+        case "b": click_count2++;show_more(click_count2, obj);break;
+        case "c": click_count3++;show_more(click_count3, obj);break;
+        case "d": click_count4++;show_more(click_count4, obj);break;
+    }
+}
+
 function show_more(click, obj)
 {
     if (click % 2 == 1)
@@ -20,34 +37,6 @@ function show_more(click, obj)
     else
     {obj.children[0].style.transform="rotate(0deg)";
     obj.nextElementSibling.style.height="0";}
-}
-
-var click_count1 = 0;
-function show_1(obj)
-{
-    click_count1++;
-    show_more(click_count1, obj);
-}
-
-var click_count2 = 0;
-function show_2(obj)
-{
-    click_count2++;
-    show_more(click_count2, obj);
-}
-
-var click_count3 = 0;
-function show_3(obj)
-{
-    click_count3++;
-    show_more(click_count3, obj);
-}
-
-var click_count4 = 0;
-function show_4(obj)
-{
-    click_count4++;
-    show_more(click_count4, obj);
 }
 
 function add(obj)
