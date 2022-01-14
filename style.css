@@ -213,6 +213,16 @@ i
     color: rgba(76, 0, 130, 0.5);
 }
 
+#refresh
+{
+    text-decoration: none;
+}
+
+#refresh:hover
+{
+    text-decoration: underline rgba(76, 0, 130, 0.5);
+}
+
 svg
 {
     display: inline-block;
