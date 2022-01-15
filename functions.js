@@ -39,6 +39,24 @@ function show_more(click, obj)
     obj.nextElementSibling.style.height="0";}
 }
 
+var click = 0;
+function show_search()
+{
+    click++;
+    var fmc = document.getElementById("fmc");
+    var search = document.getElementById("search");
+    if (click % 2 == 1)
+    {
+        fmc.style.display = "none";
+        search.style.display = "block";
+    }
+    else
+    {
+        fmc.style.display = "block";
+        search.style.display = "none";
+    }
+}
+
 function add(obj)
 {  
     var tc = document.getElementById("wordbox");
