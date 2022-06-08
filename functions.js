@@ -1,7 +1,7 @@
 MathJax = {
     tex: {
-      inlineMath: [['$', '$']], //行内公式
-      displayMath: [['$$','$$']] //段内公式
+      inlineMath: [['$', '$']],
+      displayMath: [['$$','$$']]
     },
     tex2jax: {
         inlineMath: [ ['$','$'], ["\\(","\\)"] ],
