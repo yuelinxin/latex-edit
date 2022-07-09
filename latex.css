@@ -1,6 +1,6 @@
 body
 {
-    animation: 10.0s movement linear infinite;
+    /* animation: 10.0s movement linear infinite; */
     background-color: #fdafb6;
     background-image: 
     radial-gradient(closest-side, rgba(235, 105, 78, 1), rgba(235, 105, 78, 0)),
