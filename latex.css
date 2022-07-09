@@ -470,7 +470,8 @@ svg
 {
     body
     {
-        backdrop-filter: blur(40px);
+        background-color: white;
+        background-image: none;
         opacity: 0;
     }
 }
