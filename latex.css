@@ -19,6 +19,12 @@ body
     padding: 0;
 }
 
+svg
+{
+    color: inherit;
+    vertical-align: -0.075em;
+}
+
 #topbar
 {
     background-color: rgba(245, 245, 245);
@@ -81,8 +87,7 @@ body
 #apple
 {
     position: relative;
-    top: 0.1em;
-    /* 0.15vh */
+    top: calc((4vh - 16px) / 5);
 }
 
 #searchButton
@@ -301,12 +306,6 @@ i
 #refresh:hover
 {
     text-decoration: underline rgba(76, 0, 130, 0.5);
-}
-
-svg
-{
-    display: inline-block;
-    vertical-align: -0.075em;
 }
 
 #wordbox
