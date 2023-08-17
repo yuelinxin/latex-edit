@@ -1,4 +1,4 @@
-# LaTeX
+# LaTeX Web Edit
 
 #### Intro 📓
 This is a webpage tool for converting LaTeX online 💻    
