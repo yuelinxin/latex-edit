@@ -7,7 +7,7 @@ And your formula will be rendered instantly 🚀
 > This is a front-end-only webpage, used for demo only.  
 
 #### URL 🌐
-This website is currently available at: https://staticfile.osl.ink/staticFiles/latex.html
+This website is currently available at: https://latexedit.netlify.app
 
 #### Maintenance Note 🔨
 The symbols does not cover all of the LaTeX symbols, so if there are symbols that you would like to add, open an issue⦿ and render what you want!    
